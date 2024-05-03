@@ -10,14 +10,14 @@
   <!-- 
     - primary meta tags
   -->
-  <title>Kane Williams - Web & App Developer</title>
-  <meta name="title" content="Kane Williams - Web & App Developer">
-  <meta name="description" content="This is a personal portfolio html template made by codewithsadee">
+  <title>Muliika Samuel - Fullstack web-developer</title>
+  <meta name="title" content="Muliika Samuel - Fullstack web-developer">
+  <meta name="description" content="Happy student of the craft - always learning new things in life, tech, code and finance">
 
   <!-- 
     - favicon
   --> 
-  <link rel="shortcut icon" href="{% static './favicon.svg' %}" type="image/svg+xml">
+  <link rel="shortcut icon" href="{% static './favicon2.svg' %}" type="image/svg+xml">
 
   <!-- 
     - google font link
@@ -35,6 +35,16 @@
     - preload images
   --> 
   <link rel="preload" as="image" href="{% static './assets/images/hero-banner.jpg' %}">
+
+  <style>
+    .inline-btns {
+      width:100%;
+      display:flex;
+      justify-content: end;
+      text-align:left;
+    }
+    
+  </style>
 
 </head>
 
@@ -60,7 +70,7 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="{% static './assets/images/logo.svg' %}" width="170" height="40" alt="Pfolio home">
+        <img src="{% static './logo.svg' %}" width="170" height="40" alt="Pfolio home">
       </a>
 
       <button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
@@ -76,24 +86,24 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Resume</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">Services</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">Portfolio</a>
-          </li>
-
-          <li>
             <a href="#" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link">About</a>
           </li>
 
           <li>
             <a href="#" class="navbar-link">Contact</a>
           </li>
+
+          {% comment %} <li>
+            <a href="#" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link">Contact</a>
+          </li> {% endcomment %}
 
         </ul>
       </nav>
@@ -120,7 +130,7 @@
           <div class="hero-content">
 
             <p class="hero-subtitle">
-              Hello, Im
+              Hello 👋, Im
             </p>
 
             <h1 class="h1 hero-title">SAMUEL <br/> MULIIKA</h1>
@@ -134,21 +144,20 @@
             </div> -->
 
             <p class="section-text">
-              Hi, I’m Samuel Muliika and I am creative web & app developer who dream making the world better place by
-              creating captivating products.
+              A fullstack web developer with a knack for crafting beautiful and functional web experiences, I thrive on turning ideas into reality through code. Whether it's building sleek user interfaces or architecting robust backend systems, I'm always up for a coding challenge.
             </p>
 
             <div class="inline-btns">
-              <a href="#" class="btn has-before">
-                <span class="span">Download CV</span>
-  
-                <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
-              </a>
-              <a href="#" class="btn has-before">
+              <a href="#contact" class="btn has-before">
                 <span class="span">Contact Me</span>
   
-                <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
+                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
               </a>
+              {% comment %} <a href="#contact" class="btn has-before">
+                <span class="span">Contact Me</span>
+  
+                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              </a> {% endcomment %}
             </div>
 
           </div>
@@ -196,10 +205,10 @@
                     <ion-icon name="desktop-outline"></ion-icon>
                   </div>
 
-                  <h3 class="h3 card-title">Website Design</h3>
+                  <h3 class="h3 card-title">FrontEnd Web-dev</h3>
 
                   <p class="card-text">
-                    Website ravida surna eveti semen the conse tusio anivite dianne one nivam acestion vue artin dictum.
+                    Elevate your online presence with captivating front-end web development services. From crafting engaging user interfaces to ensuring seamless user experiences, I bring your digital vision to life.
                   </p>
 
                   <span class="text-lg card-number">01</span>
@@ -213,13 +222,14 @@
                 <div class="service-card">
 
                   <div class="card-icon">
-                    <ion-icon name="podium-outline"></ion-icon>
+                    {% comment %} <ion-icon name="podium-outline"></ion-icon> {% endcomment %}
+                    <ion-icon name="code-slash-outline"></ion-icon>
                   </div>
 
-                  <h3 class="h3 card-title">SEO Marketing</h3>
+                  <h3 class="h3 card-title">Backend web-dev</h3>
 
                   <p class="card-text">
-                    Website ravida surna eveti semen the conse tusio anivite dianne one nivam acestion vue artin dictum.
+                    Power your website with robust back-end web development solutions tailored to your unique needs. From database design to server-side logic, I ensure your website operates flawlessly and delivers exceptional performance
                   </p>
 
                   <span class="text-lg card-number">02</span>
@@ -233,13 +243,14 @@
                 <div class="service-card">
 
                   <div class="card-icon">
-                    <ion-icon name="basket-outline"></ion-icon>
+                    {% comment %} <ion-icon name="basket-outline"></ion-icon> {% endcomment %}
+                    <ion-icon name="albums-outline"></ion-icon>
                   </div>
 
-                  <h3 class="h3 card-title">eCommerce</h3>
+                  <h3 class="h3 card-title">UI / UX design</h3>
 
                   <p class="card-text">
-                    Website ravida surna eveti semen the conse tusio anivite dianne one nivam acestion vue artin dictum.
+                    From wireframing to prototyping, I meticulously design every aspect of your website to ensure a seamless user journey that keeps users coming back for more.
                   </p>
 
                   <span class="text-lg card-number">03</span>
@@ -253,13 +264,14 @@
                 <div class="service-card">
 
                   <div class="card-icon">
-                    <ion-icon name="color-filter-outline"></ion-icon>
+                    {% comment %} <ion-icon name="color-filter-outline"></ion-icon> {% endcomment %}
+                    <ion-icon name="analytics-outline"></ion-icon>
                   </div>
 
-                  <h3 class="h3 card-title">Graphic Design</h3>
+                  <h3 class="h3 card-title">SEO (Search Engine Optimization)</h3>
 
                   <p class="card-text">
-                    Website ravida surna eveti semen the conse tusio anivite dianne one nivam acestion vue artin dictum.
+                      With a focus on white-hat SEO practices and continuous optimization, I'll help your website rise to the top of search engine results and stay ahead of the competition
                   </p>
 
                   <span class="text-lg card-number">04</span>
@@ -347,16 +359,15 @@
 
             <div>
               <p class="section-text">
-                Pellentesque magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi senectus
-                dictum.
+                React, Next Js, Tailwind Css, Bootstrap, Redux, Postgresql, MySql, MongoDb, Django, DRF
               </p>
 
-              <p class="section-text">
+              {% comment %} <p class="section-text">
                 Web design magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi tristique
                 senectus the neuse malesuada nullam ac lorem miss the duru.
-              </p>
+              </p> {% endcomment %}
 
-              <a href="#" class="btn has-before">info@kwilliams.com</a>
+              {% comment %} <a href="#" class="btn has-before">info@kwilliams.com</a> {% endcomment %}
             </div>
 
             <!-- <div>
@@ -678,12 +689,16 @@
 
       <ul class="footer-list">
 
-        <li>
+        <li id="contact">
           <p class="h4 footer-list-title">Get in touch</p>
         </li>
 
         <li>
           <a href="mailto:info@kwilliams.com" class="footer-link">samuelmuliika@gmail.com</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">0775532402 / 0756550169</a>
         </li>
 
       </ul>
@@ -710,7 +725,7 @@
 
         <li>
           <a href="#" class="social-link">
-            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-twitter"></ion-icon>
           </a>
         </li>
 
