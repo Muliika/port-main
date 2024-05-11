@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'jazzmin',
     'taggit',
     'ckeditor',
-    'mptt',
+    # 'mptt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

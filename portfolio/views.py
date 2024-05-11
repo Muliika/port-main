@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from .models import Post, Comment, Category
-from .forms import NewCommentForm
+from .models import Post, Category
+# from .models import Comment
+# from .forms import NewCommentForm
 from django.views.generic import ListView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -19,26 +20,28 @@ def post_single(request, post):
     allcomments = post.comments.filter(status=True)
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(allcomments, 10)
-    try:
-        comments = paginator.page(page)
-    except PageNotAnInteger:
-        comments = paginator.page(1)
-    except EmptyPage:
-        comments = paginator.page(paginator.num_pages)
+    # paginator = Paginator(allcomments, 10)
+    # try:
+    #     comments = paginator.page(page)
+    # except PageNotAnInteger:
+    #     comments = paginator.page(1)
+    # except EmptyPage:
+    #     comments = paginator.page(paginator.num_pages)
 
-    user_comment = None
+    # user_comment = None
 
-    if request.method == 'POST':
-        comment_form = NewCommentForm(request.POST or None)
-        if comment_form.is_valid():
-            user_comment = comment_form.save(commit=False)
-            user_comment.post = post
-            user_comment.save()
-            return HttpResponseRedirect('/' + post.slug)
-    else:
-        comment_form = NewCommentForm()
-    context = {'post': post, 'comments':  user_comment, 'comments': comments, 'comment_form': comment_form, 'allcomments': allcomments, }
+    # if request.method == 'POST':
+    #     comment_form = NewCommentForm(request.POST or None)
+    #     if comment_form.is_valid():
+    #         user_comment = comment_form.save(commit=False)
+    #         user_comment.post = post
+    #         user_comment.save()
+    #         return HttpResponseRedirect('/' + post.slug)
+    # else:
+    #     comment_form = NewCommentForm()
+    context = {
+        'post': post, 
+        }
     # context = {'post': post}
     return render(request, 'portfolio/single.html', context)
 
