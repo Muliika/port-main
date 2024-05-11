@@ -1,766 +1,184 @@
+{% extends 'partials/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
+        <!-- # site-content
+        ================================================== -->
+        <section id="content" class="s-content">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 
-    - primary meta tags
-  -->
-  <title>Muliika Samuel - Fullstack web-developer</title>
-  <meta name="title" content="Muliika Samuel - Fullstack web-developer">
-  <meta name="description" content="Happy student of the craft - always learning new things in life, tech, code and finance">
+            <!-- hero -->
+            <div class="hero">
 
-  <!-- 
-    - favicon
-  --> 
-  <link rel="shortcut icon" href="{% static './favicon2.svg' %}" type="image/svg+xml">
+                <div class="hero__slider swiper-container">
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+                    <div class="swiper-wrapper">
+                        <article class="hero__slide swiper-slide">
+                            <div class="hero__entry-image" style="background-image: url('{% static 'images/thumbs/featured/featured-01_2000.jpg' %}');"></div>
+                            <div class="hero__entry-text">
+                                <div class="hero__entry-text-inner">
+                                    <div class="hero__entry-meta">
+                                        <span class="cat-links">
+                                            <a href="category.html">Inspiration</a>
+                                        </span>
+                                    </div>
+                                    <h2 class="hero__entry-title">
+                                        <a href="single-standard.html">
+                                            Understanding and Using Negative Space.
+                                        </a>
+                                    </h2>
+                                    <p class="hero__entry-desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                    nostrud corporis est laudantium voluptatum consectetur adipiscing. 
+                                    </p>
+                                    <a class="hero__more-link" href="single-standard.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="hero__slide swiper-slide">
+                            <div class="hero__entry-image" style="background-image: url('{% static 'images/thumbs/featured/featured-02_2000.jpg' %}');"></div>
+                            <div class="hero__entry-text">
+                                <div class="hero__entry-text-inner">
+                                    <div class="hero__entry-meta">
+                                        <span class="cat-links">
+                                            <a href="category.html">Health</a>
+                                        </span>
+                                    </div>
+                                    <h2 class="hero__entry-title">
+                                        <a href="single-standard.html">
+                                            10 Reasons Why Being in Nature Is Good For You.
+                                        </a>
+                                    </h2>
+                                    <p class="hero__entry-desc">
+                                    Voluptas harum sequi rerum quasi quisquam. Est tenetur ut doloribus in aliquid animi nostrum. Tempora 
+                                    quibusdam ad nulla. Quis autem possimus dolores est est fugiat saepe vel aut. Earum consequatur.
+                                    </p>
+                                    <a class="hero__more-link" href="single-standard.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="hero__slide swiper-slide">
+                            <div class="hero__entry-image" style="background-image: url('{% static 'images/thumbs/featured/featured-03_2000.jpg' %}');"></div>
+                            <div class="hero__entry-text">
+                                <div class="hero__entry-text-inner">
+                                    <div class="hero__entry-meta">
+                                        <span class="cat-links">
+                                            <a href="category.html">Lifestyle</a>
+                                        </span>
+                                    </div>
+                                    <h2 class="hero__entry-title">
+                                        <a href="single-standard.html">
+                                            Six Relaxation Techniques to Reduce Stress.
+                                        </a>
+                                    </h2>
+                                    <p class="hero__entry-desc">
+                                    Quasi consequatur quia excepturi ullam velit. Repellat velit vel occaecati neque perspiciatis quibusdam nulla. 
+                                    Unde et earum. Nostrum nulla optio debitis odio modi. Quis autem possimus dolores est est fugiat saepe vel aut.
+                                    </p>
+                                    <a class="hero__more-link" href="single-standard.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div> <!-- swiper-wrapper -->
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
-
-  <!-- 
-    - preload images
-  --> 
-  <link rel="preload" as="image" href="{% static './assets/images/hero-banner.jpg' %}">
-
-  <style>
-    .inline-btns {
-      width:100%;
-      display:flex;
-      justify-content: end;
-      text-align:left;
-    }
+                    <div class="swiper-pagination"></div>
     
-  </style>
-
-</head>
-
-<body>
-
-  <!-- 
-    - #PRELOADER
-  -->
-
-  <div class="preloader" data-preloader>
-    <div class="circle"></div>
-  </div>
-
-
-
-
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="#" class="logo">
-        <img src="{% static './logo.svg' %}" width="170" height="40" alt="Pfolio home">
-      </a>
-
-      <button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-      </button>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">Blog</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">About</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">Contact</a>
-          </li>
-
-          {% comment %} <li>
-            <a href="#" class="navbar-link">Blog</a>
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link">Contact</a>
-          </li> {% endcomment %}
-
-        </ul>
-      </nav>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
-    </div>
-  </header>
-
-
-
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="section hero" aria-label="home">
-        <div class="container text-centering">
-
-          <div class="hero-content">
-
-            <p class="hero-subtitle">
-              Hello 👋, Im
-            </p>
-
-            <h1 class="h1 hero-title">SAMUEL <br/> MULIIKA</h1>
-
-            <!-- <p class="hero-subtitle">
-              Fullstack web-developer
-            </p> -->
-
-            <!-- <div class="hero-banner">
-              <img src="{% static './assets/images/hero-banner.jpg' %}" width="800" height="800" alt="kane williams" class="w-100">
-            </div> -->
-
-            <p class="section-text">
-              A fullstack web developer with a knack for crafting beautiful and functional web experiences, I thrive on turning ideas into reality through code. Whether it's building sleek user interfaces or architecting robust backend systems, I'm always up for a coding challenge.
-            </p>
-
-            <div class="inline-btns">
-              <a href="#contact" class="btn has-before">
-                <span class="span">Contact Me</span>
-  
-                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-              </a>
-              {% comment %} <a href="#contact" class="btn has-before">
-                <span class="span">Contact Me</span>
-  
-                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-              </a> {% endcomment %}
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #SERVICE
-      -->
-
-      <section class="service" aria-labelledby="service-label">
-        <div class="container">
-
-          <div class="title-wrapper">
-
-            <div>
-              <p class="section-subtitle">
-                Services That I Provide
-              </p>
-
-              <h2 class="h2 section-title" id="service-label">Services</h2>
-            </div>
-
-            <!-- <p class="section-text">
-              Phasellus et lacus suscipit congue nisl the volutpat magna. donec miss the drana risus tincidunt convallis
-              velit orci congue tortor eu dignissim ipsum suam non odio. Pellenta esuntion miss the imperdiet metus
-              ornare.
-            </p> -->
-
-          </div>
-
-          <div class="slider" data-slider>
-
-            <ul class="slider-container service-list" data-slider-container>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="desktop-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">FrontEnd Web-dev</h3>
-
-                  <p class="card-text">
-                    Elevate your online presence with captivating front-end web development services. From crafting engaging user interfaces to ensuring seamless user experiences, I bring your digital vision to life.
-                  </p>
-
-                  <span class="text-lg card-number">01</span>
-
-                  <a href="#" class="layer-link" aria-label="More about my website design service"></a>
-
-                </div>
-              </li>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    {% comment %} <ion-icon name="podium-outline"></ion-icon> {% endcomment %}
-                    <ion-icon name="code-slash-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Backend web-dev</h3>
-
-                  <p class="card-text">
-                    Power your website with robust back-end web development solutions tailored to your unique needs. From database design to server-side logic, I ensure your website operates flawlessly and delivers exceptional performance
-                  </p>
-
-                  <span class="text-lg card-number">02</span>
-
-                  <a href="#" class="layer-link" aria-label="More about my SEO Marketing service"></a>
-
-                </div>
-              </li>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    {% comment %} <ion-icon name="basket-outline"></ion-icon> {% endcomment %}
-                    <ion-icon name="albums-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">UI / UX design</h3>
-
-                  <p class="card-text">
-                    From wireframing to prototyping, I meticulously design every aspect of your website to ensure a seamless user journey that keeps users coming back for more.
-                  </p>
-
-                  <span class="text-lg card-number">03</span>
-
-                  <a href="#" class="layer-link" aria-label="More about my eCommerce service"></a>
-
-                </div>
-              </li>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    {% comment %} <ion-icon name="color-filter-outline"></ion-icon> {% endcomment %}
-                    <ion-icon name="analytics-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">SEO (Search Engine Optimization)</h3>
-
-                  <p class="card-text">
-                      With a focus on white-hat SEO practices and continuous optimization, I'll help your website rise to the top of search engine results and stay ahead of the competition
-                  </p>
-
-                  <span class="text-lg card-number">04</span>
-
-                  <a href="#" class="layer-link" aria-label="More about my Graphic Design service"></a>
-
-                </div>
-              </li>
-
-              <!-- <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="megaphone-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Digital Marketing</h3>
-
-                  <p class="card-text">
-                    Website ravida surna eveti semen the conse tusio anivite dianne one nivam acestion vue artin dictum.
-                  </p>
-
-                  <span class="text-lg card-number">05</span>
-
-                  <a href="#" class="layer-link" aria-label="More about my Digital Marketing service"></a>
-
-                </div>
-              </li>
-
-              <li class="slider-item" data-slider-item>
-                <div class="service-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Social Media</h3>
-
-                  <p class="card-text">
-                    Website ravida surna eveti semen the conse tusio anivite dianne one nivam acestion vue artin dictum.
-                  </p>
-
-                  <span class="text-lg card-number">06</span>
-
-                  <a href="#" class="layer-link" aria-label="More about my Social Media service"></a>
-
-                </div>
-              </li>  -->
-
-            </ul>
-
-            <div class="slider-controls">
-              <button class="slider-control prev" data-slider-prev aria-label="Slide to previous item">
-                <div class="line"></div>
-                <div class="arrow"></div>
-              </button>
-
-              <button class="slider-control next" data-slider-next aria-label="Slide to next item">
-                <div class="line"></div>
-                <div class="arrow"></div>
-              </button>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #SKILLS
-      -->
-
-      <section class="section skills" aria-label="our skills">
-        <div class="container">
-
-          <p class="section-subtitle">I turn imaginations into reality</p>
-
-          <h2 class="h2 section-title">My skills</h2>
-
-          <div class="skills-wrapper">
-
-            <div>
-              <p class="section-text">
-                React, Next Js, Tailwind Css, Bootstrap, Redux, Postgresql, MySql, MongoDb, Django, DRF
-              </p>
-
-              {% comment %} <p class="section-text">
-                Web design magna magna semper dapibus felis necatin aliuen risus. Pellentesque habitant morbi tristique
-                senectus the neuse malesuada nullam ac lorem miss the duru.
-              </p> {% endcomment %}
-
-              {% comment %} <a href="#" class="btn has-before">info@kwilliams.com</a> {% endcomment %}
-            </div>
-
-            <!-- <div>
-
-              <ul class="skills-list">
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">Design</p>
-
-                    <data class="progress-value" value="90">90%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 90%;"></div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">Branding</p>
-
-                    <data class="progress-value" value="80">80%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 80%;"></div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">Web Design</p>
-
-                    <data class="progress-value" value="95">95%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 95%;"></div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="progress-wrapper">
-                    <p class="progress-label">Social Media</p>
-
-                    <data class="progress-value" value="85">85%</data>
-                  </div>
-
-                  <div class="progress-bg">
-                    <div class="progress" style="width: 85%;"></div>
-                  </div>
-                </li>
-
-              </ul>
-
-            </div> -->
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #PORTFOLIO
-      -->
-
-      <!-- <section class="portfolio" aria-labelledby="portfolio-label">
-
-        <div class="title-wrapper container">
-
-          <div>
-            <p class="section-subtitle" id="portfolio-label">Our Works</p>
-
-            <h2 class="h2 section-title">Portfolio</h2>
-          </div>
-
-          <p class="section-text">
-            Phasellus et lacus suscipit congue nisl the volutpat magna. donec miss the drana risus tincidunt convallis
-            velit orci congue tortor eu dignissim ipsum suam non odio. Pellenta esuntion miss the imperdiet metus
-            ornare.
-          </p>
-
-        </div>
-
-        <div class="slider" data-slider>
-
-          <ul class="slider-container" data-slider-container>
-
-            <li class="slider-item">
-              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
-
-                <img src="{% static './assets/images/portfolio-1.jpg' %}" width="600" height="600" loading="lazy" alt="portfolio"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Lab. 001</h3>
-
-                  <p class="card-text">Website Design</p>
-                </div>
-
-                <a href="#" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="slider-item">
-              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
-
-                <img src="{% static './assets/images/portfolio-2.jpg' %}" width="600" height="600" loading="lazy" alt="portfolio"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Aer Agency</h3>
-
-                  <p class="card-text">Website / Development</p>
-                </div>
-
-                <a href="#" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="slider-item">
-              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
-
-                <img src="{% static './assets/images/portfolio-3.jpg' %}" width="600" height="600" loading="lazy" alt="portfolio"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Joker Card</h3>
-
-                  <p class="card-text">UX Design / Web App</p>
-                </div>
-
-                <a href="#" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="slider-item">
-              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
-
-                <img src="{% static './assets/images/portfolio-4.jpg' %}" width="600" height="600" loading="lazy" alt="portfolio"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Peaky Blinders</h3>
-
-                  <p class="card-text">Website / UX Design</p>
-                </div>
-
-                <a href="#" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="slider-item">
-              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
-
-                <img src="{% static './assets/images/portfolio-5.jpg' %}" width="600" height="600" loading="lazy" alt="portfolio"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Design Zoom</h3>
-
-                  <p class="card-text">Branding / Design</p>
-                </div>
-
-                <a href="#" class="layer-link"></a>
-
-              </div>
-            </li>
-
-            <li class="slider-item">
-              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
-
-                <img src="{% static './assets/images/portfolio-6.jpg' %}" width="600" height="600" loading="lazy" alt="portfolio"
-                  class="img-cover">
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Out Zone</h3>
-
-                  <p class="card-text">UX Design / Web App</p>
-                </div>
-
-                <a href="#" class="layer-link"></a>
-
-              </div>
-            </li>
-
-          </ul>
-
-          <div class="slider-controls">
-            <button class="slider-control prev" data-slider-prev aria-label="Slide to previous item">
-              <div class="line"></div>
-              <div class="arrow"></div>
-            </button>
-
-            <button class="slider-control next" data-slider-next aria-label="Slide to next item">
-              <div class="line"></div>
-              <div class="arrow"></div>
-            </button>
-          </div>
-
-        </div>
-
-      </section> -->
-
-
-
-
-
-      <!-- 
-        - #BLOG
-      -->
-
-      <!-- <section class="section blog" aria-labelledby="blog-label">
-        <div class="container">
-
-          <p class="section-subtitle" id="blog-label">Recent Articles</p>
-
-          <h2 class="h2 section-title">Latest News</h2>
-
-          <ul class="blog-list">
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="{% static './assets/images/blog-1.jpg' %}" width="700" height="470" loading="lazy"
-                    alt="Get Started With Tiktok Ads." class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-06-24">
-                    <span class="span text-lg">24</span>
-                    June 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">Get Started With Tiktok Ads.</h3>
-
-                    <p class="card-text">
-                      Phasellus et lacus suscipit congue nis in the miss mine one miss the drana risus in tincidunt
-                      ornare.
-                    </p>
-
-                    <a href="#" class="btn has-before">
-                      <span class="span">Read more</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner img-holder" style="--width: 700; --height: 470;">
-                  <img src="{% static './assets/images/blog-2.jpg' %}" width="700" height="470" loading="lazy"
-                    alt="UX in Ecommerce – 5 things to avoid." class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <time class="time" datetime="2022-06-27">
-                    <span class="span text-lg">27</span>
-                    June 2022
-                  </time>
-
-                  <div>
-                    <h3 class="h3 card-title">UX in Ecommerce – 5 things to avoid.</h3>
-
-                    <p class="card-text">
-                      Phasellus et lacus suscipit congue nis in the miss mine one miss the drana risus in tincidunt
-                      ornare.
-                    </p>
-
-                    <a href="#" class="btn has-before">
-                      <span class="span">Read more</span>
-
-                      <ion-icon name="arrow-forward"></ion-icon>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section> -->
-
-    </article>
-  </main>
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-    <div class="container">
-
-      <ul class="footer-list">
-
-        <li id="contact">
-          <p class="h4 footer-list-title">Get in touch</p>
-        </li>
-
-        <li>
-          <a href="mailto:info@kwilliams.com" class="footer-link">samuelmuliika@gmail.com</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">0775532402 / 0756550169</a>
-        </li>
-
-      </ul>
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="h4 footer-list-title">Locations</p>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Kampala — Uganda</a>
-        </li>
-
-      </ul>
-
-      <ul class="social-list">
-
-        <!-- <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-dribbble"></ion-icon>
-          </a>
-        </li> -->
-
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-        </li>
-
-        <!-- <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-skype"></ion-icon>
-          </a>
-        </li> -->
-
-        <!-- <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li> -->
-
-      </ul>
-
-    </div>
-  </footer>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="{% static './assets/js/script.js' %}"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
-</html>
+                </div> <!-- end hero slider -->
+
+                <a href="#bricks" class="hero__scroll-down smoothscroll">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.25 12H5"></path>
+                    </svg>
+                    <span>Scroll</span>
+                </a>
+
+            </div> <!-- end hero -->
+
+
+            <!--  masonry -->
+            <div id="bricks" class="bricks">
+
+                <div class="masonry">
+
+                    <div class="bricks-wrapper" data-animate-block>
+
+                        <div class="grid-sizer"></div>
+                        {% for post in posts %}
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="{{post.get_absolute_url}}" class="thumb-link">
+                                    <img src="{{post.image.url}}" 
+                                        srcset="{{post.image.url}} 1x, {{post.image.url}} 2x" alt="">
+                                </a> 
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="#">{{post.category}}</a>
+                                        </span>
+                                        <span class="byline">
+                                            By:
+                                            <a href="#0">{{post.author}}</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="{{post.get_absolute_url}}">{{post.title|truncatechars:50}}</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        {{post.excerpt|truncatechars:150}}
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="{{post.get_absolute_url}}">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+                        {% endfor %}
+
+                    </div> <!-- end bricks-wrapper -->
+
+                </div> <!-- end masonry-->
+
+
+                <!-- pagination -->
+                <div class="row pagination">
+                    <div class="column lg-12">
+                        <nav class="pgn">
+                            <ul>
+                                <li>
+                                    <a class="pgn__prev" href="#0">
+                                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.25 12H5"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li><a class="pgn__num" href="#0">1</a></li>
+                                <li><span class="pgn__num current">2</span></li>
+                                <li><a class="pgn__num" href="#0">3</a></li>
+                                <li><a class="pgn__num" href="#0">4</a></li>
+                                <li><a class="pgn__num" href="#0">5</a></li>
+                                <li><span class="pgn__num dots">…</span></li>
+                                <li><a class="pgn__num" href="#0">8</a></li>
+                                <li>
+                                    <a class="pgn__next" href="#0">
+                                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.75 6.75L19.25 12L13.75 17.25"></path>
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H4.75"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav> <!-- end pgn -->
+                    </div> <!-- end column -->
+                </div> <!-- end pagination -->
+
+            </div> <!-- end bricks -->
+
+        </section> <!-- end s-content -->
+{% endblock content %}
+
+       

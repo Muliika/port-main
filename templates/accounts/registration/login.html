@@ -1,0 +1,54 @@
+{% extends 'partials/base2.html' %}
+{% load static %}
+{% block content %}
+        <!-- # site-content
+        ================================================== -->
+        <div id="content" class="s-content s-content--page">
+
+                <div class="row entry-wrap">
+                    <div class="column lg-12">
+
+                        <article class="entry">
+
+                            <header class="entry__header entry__header--narrow">
+    
+                                <h1 class="entry__title">
+                                    Login
+                                </h1>
+    
+                            </header>
+
+                            <div class="content-primary">
+
+                                <div class="entry__content">
+                                    <h4>Welcome back.</h4>
+
+                                    <form name="cForm" id="cForm" class="entry__form" method="post" action="{% url 'accounts:login' %}" autocomplete="off">
+                                        {% csrf_token %}
+                                        <fieldset class="row">
+                                            
+                                            <div class="column lg-12 form-field">
+                                                <input name="{{ form.username.name }}" id="" class="u-fullwidth" placeholder="Your Email" value="" type="text">
+                                            </div>
+                                            
+                                            <div class="column lg-12 form-field">
+                                                <input name="{{ form.password.name }}" id="" class="u-fullwidth" placeholder="Password" value="" type="password">
+                                            </div>
+
+                                            <div class="column lg-12">
+                                                <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large u-fullwidth" value="Login" type="submit">
+                                            </div>
+
+                                        </fieldset>
+                                    </form>
+                                    <ul class="errorlist">
+                                        {{ form.non_field_errors|striptags }}
+                                    </ul> <!-- end form -->
+                            </div> <!-- end content-primary -->
+
+                        </article> <!-- end entry -->
+
+                    </div>
+                </div> <!-- end entry-wrap -->
+        </section> <!-- end s-content -->
+{% endblock content %}
