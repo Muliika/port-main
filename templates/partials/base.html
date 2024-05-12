@@ -7,7 +7,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Spurgeon</title>
+    <title>Muliika - Portfolio</title>
 
     <script>
         document.documentElement.classList.remove('no-js');
@@ -54,7 +54,7 @@
 
             <div class="s-header__branding">
                 <p class="site-title">
-                    <a href="index.html" rel="home">Spurgeon.</a>
+                    <a href="index.html" rel="home">samuelmuliika.</a>
                 </p>
             </div>
 
@@ -65,7 +65,7 @@
                     <h3 class="s-header__nav-heading">Navigate to</h3>
     
                     <ul class="s-header__nav">
-                        <li class="current-menu-item"><a href="index.html" title="">Home</a></li>
+                        <li class="current-menu-item"><a href="/" title="">Home</a></li>
                         <li class="has-children">
                             <a href="#0" title="" class="">Categories</a>
                             <ul class="sub-menu">
@@ -74,16 +74,16 @@
                                 {% endfor %}
                             </ul>
                         </li>
-                        <li><a href="about.html" title="">About</a></li>
-                        <li><a href="contact.html" title="">Contact</a></li>
+                        <li><a href="{% url 'portfolio:about' %}" title="">About</a></li>
+                        <li><a href="{% url 'portfolio:contact' %}" title="">Contact</a></li>
                         <li class="has-children">
                             <a href="#0" title="" class="">Profile</a>
                             <ul class="sub-menu">
                                 <li><a href="{% url 'accounts:login' %}">Login</a></li>
                                 <li><a href="{% url 'accounts:register' %}">Register</a></li>
                                 <li><a href="#" onclick="logout()">Logout</a></li>
-                                <li><a href="single-audio.html">Forgot Password</a></li>
-                                <li><a href="single-audio.html">Delete Account</a></li>
+                                <li><a href="#">Forgot Password</a></li>
+                                <li><a href="#">Delete Account</a></li>
                             </ul>
                         </li>
                         
@@ -131,10 +131,10 @@
                 <div class="column lg-12">
 
                     <h2>
-                    Subscribe to Our Newsletter.
+                    Subscribe to My Newsletter.
                     </h2>
                     <p>
-                    Subscribe now to get all latest updates
+                    Get all latest updates directly into your inbox. [i dont spam]
                     </p>
 
                     <form id="mc-form" class="mc-form">
@@ -150,7 +150,7 @@
             <div class="row s-footer__main">
 
                 <div class="column lg-5 md-6 tab-12 s-footer__about">
-                    <h4>Spurgeon</h4>
+                    <h4>Samuel Muliika</h4>
 
                     <p>
                     Lorem ipsum dolor sit amet, consectetur 
@@ -164,25 +164,11 @@
                 <div class="column lg-5 md-6 tab-12">
                     <div class="row">
                         <div class="column lg-6">
-                            <h4>Categories</h4>
+                            <h4>Quick Links</h4>
                             <ul class="link-list">
-                                <li><a href="category.html">Lifestyle</a></li>
-                                <li><a href="category.html">Workplace</a></li>
-                                <li><a href="category.html">Inspiration</a></li>
-                                <li><a href="category.html">Design</a></li>
-                                <li><a href="category.html">Health</a></li>
-                                <li><a href="category.html">Photography</a></li>
-                            </ul>
-                        </div>
-                        <div class="column lg-6">
-                            <h4>Site Links</h4>
-                            <ul class="link-list">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="category.html">Categories</a></li>
-                                <li><a href="category.html">Blog</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="about.html">Contact</a></li>
-                                <li><a href="#0">Terms & Policy</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact Me</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +190,7 @@
                 </div>
                 <div class="column lg-5 md-6 tab-12">
                     <div class="ss-copyright">
-                        <span>© Copyright noadi 2023</span> 
+                        <span>© Samuel Muliika 2024</span> 
                         {% comment %} <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span> {% endcomment %}
                     </div>
                 </div>

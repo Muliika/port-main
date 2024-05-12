@@ -17,8 +17,8 @@ def post_single(request, post):
 
     post = get_object_or_404(Post, slug=post, status='published')
 
-    allcomments = post.comments.filter(status=True)
-    page = request.GET.get('page', 1)
+    # allcomments = post.comments.filter(status=True)
+    # page = request.GET.get('page', 1)
 
     # paginator = Paginator(allcomments, 10)
     # try:
@@ -64,3 +64,9 @@ def category_list(request):
         "category_list": category_list,
     }
     return context
+
+def about(request):
+    return render(request, 'portfolio/about.html')
+
+def contact(request):
+    return render(request, 'portfolio/contact.html')
