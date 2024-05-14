@@ -18,6 +18,7 @@
     ================================================== -->
     <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prism.css' %}">
 
     <!-- favicons
     ================================================== -->
@@ -25,6 +26,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -98,10 +102,11 @@
                 <div class="s-header__search-inner">
                     <div class="row">
     
-                        <form role="search" method="get" class="s-header__search-form" action="#">
+                        <form role="search" method="Get" class="s-header__search-form" action="{% url 'portfolio:search' %}">
+                            {% csrf_token %}
                             <label>
                                 <span class="u-screen-reader-text">Search for:</span>
-                                <input type="search" class="s-header__search-field" placeholder="Search for..." value="" name="s" title="Search for:" autocomplete="off">
+                                <input type="search" class="s-header__search-field" placeholder="Search for..." value="" name="q" title="Search for:" autocomplete="off">
                             </label>
                             <input type="submit" class="s-header__search-submit" value="Search"> 
                         </form>
@@ -211,8 +216,12 @@
 
     <!-- Java Script
     ================================================== -->
+    <script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css"></script>
+    <script>hljs.initHighlightingOnLoad()</script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/prism.js' %}"></script>
 
 </body>
 </html>

@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls', namespace='portfolio')),
     path('account/', include('accounts.urls', namespace='accounts')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 # Serve static and media files during development

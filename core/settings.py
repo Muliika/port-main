@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'jazzmin',
     'taggit',
     'ckeditor',
-    # 'mptt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -148,6 +147,13 @@ CKEDITOR_CONFIGS = {
         "toolbar": "all",
         "extraPlugins": ",".join(["codesnippet", "widget", "dialog"]),
     }
+}
+
+JAZZMIN_SETTINGS = {
+    'site_header':'samuelmuliika',
+    'site_brand':'limitless',
+    'site_logo':'',
+    'copyright':'samuelmuliika.com'
 }
 
 AUTH_USER_MODEL = "accounts.UserBase"

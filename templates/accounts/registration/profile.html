@@ -1,0 +1,51 @@
+{% extends 'partials/base2.html' %}
+{% load static %}
+{% block content %}
+        <!-- # site-content
+        ================================================== -->
+        <div id="content" class="s-content s-content--blog">
+
+                <div class="row entry-wrap">
+                    <div class="column lg-12">
+
+                        <article class="entry format-standard">
+
+                            <header class="entry__header">
+    
+                                <h1 class="entry__title">
+                                    Profile
+                                </h1>
+
+                            </header>
+
+
+                            <div class="content-primary">
+
+                                <div class="entry__content">
+                                    
+                                    <h3>Username: {{username}}</h3>
+
+                                    <div class="column lg-6 tab-12">
+                                        <a class="btn btn--stroke u-fullwidth" href="#0">Bookmarks</a>
+                                        <a class="btn btn--stroke u-fullwidth" href="#0">Stroke Button</a>
+                                        <a class="btn btn--stroke u-fullwidth" href="#0">Stroke Button</a>
+                                        <a class="btn btn--stroke u-fullwidth" href="{% url 'accounts:logout' %}">Logout</a>
+                                        <br>
+                                        <hr>
+                                        <a class="btn btn--stroke u-fullwidth" href="#0">Delete Account</a>
+                                    </div>
+
+            
+                                </div> <!-- end entry-content -->
+
+
+                            </div> <!-- end content-primary -->
+
+                        </article> <!-- end entry -->
+
+
+                    </div>
+                </div> <!-- end entry-wrap -->
+        </section> <!-- end s-content -->
+
+{% endblock content %}

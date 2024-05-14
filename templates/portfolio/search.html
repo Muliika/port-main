@@ -1,0 +1,104 @@
+{% extends 'partials/base2.html' %}
+{% load static %}
+{% block content %}
+        <!-- # site-content
+        ================================================== -->
+        <section id="content" class="s-content">
+
+
+            <!-- pageheader -->
+            <div class="s-pageheader">
+                <div class="row">
+                    <div class="column large-12">
+                        <h1 class="page-title">
+                            <span class="page-title__small-type">{{posts.count}} Search result{{posts.count|pluralize}} for:</span>
+                            {{tag.name}}
+                        </h1>
+                    </div>
+                </div>
+            </div> <!-- end s-pageheader-->
+
+
+            <!--  masonry -->
+            <div id="bricks" class="bricks">
+
+                <div class="masonry">
+
+                    <div class="bricks-wrapper" data-animate-block>
+
+                        <div class="grid-sizer"></div>
+                        {% for post in posts %}
+                        <article class="brick entry" data-animate-el>
+        
+                            <div class="entry__thumb">
+                                <a href="{{post.get_absolute_url}}" class="thumb-link">
+                                    <img src="{{post.image.url}}" 
+                                        srcset="{{post.image.url}} 1x, {{post.image.url}} 2x" alt="">
+                                </a>
+                            </div> <!-- end entry__thumb -->
+        
+                            <div class="entry__text">
+                                <div class="entry__header">
+                                    <div class="entry__meta">
+                                        <span class="cat-links">
+                                            <a href="#">{{post.category}}</a>
+                                        </span>
+                                        <span class="byline">
+                                            By:
+                                            <a href="#0">{{post.author}}</a>
+                                        </span>
+                                    </div>
+                                    <h1 class="entry__title"><a href="{{post.get_absolute_url}}">{{post.title|truncatechars:50}}</a></h1>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        {{post.excerpt|truncatechars:150}}
+                                    </p>
+                                </div>
+                                <a class="entry__more-link" href="{{post.get_absolute_url}}">Read More</a>
+                            </div> <!-- end entry__text -->
+                        
+                        </article> <!-- end article -->
+                        {% endfor %}
+
+
+                    </div> <!-- end bricks-wrapper -->
+
+                </div> <!-- end masonry-->
+
+
+                <!-- pagination -->
+                <div class="row pagination">
+                    <div class="column lg-12">
+                        <nav class="pgn">
+                            <ul>
+                                <li>
+                                    <a class="pgn__prev" href="#0">
+                                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.25 12H5"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li><a class="pgn__num" href="#0">1</a></li>
+                                <li><span class="pgn__num current">2</span></li>
+                                <li><a class="pgn__num" href="#0">3</a></li>
+                                <li><span class="pgn__num dots">…</span></li>
+                                <li><a class="pgn__num" href="#0">8</a></li>
+                                <li>
+                                    <a class="pgn__next" href="#0">
+                                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.75 6.75L19.25 12L13.75 17.25"></path>
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H4.75"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav> <!-- end pgn -->
+                    </div> <!-- end column -->
+                </div> <!-- end pagination -->
+
+            </div> <!-- end bricks -->
+
+        </section> <!-- end s-content -->
+{% endblock content %}

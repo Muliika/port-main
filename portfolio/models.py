@@ -3,6 +3,9 @@ from django.utils import timezone
 from accounts.models import UserBase
 from django.urls import reverse
 # from mptt.models import MPTTModel, TreeForeignKey
+from taggit.managers import TaggableManager
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 
 def user_directory_path(instance, filename):
@@ -34,12 +37,13 @@ class Post(models.Model):
     )
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=250)
-    excerpt = models.TextField(null=True)
+    excerpt = RichTextUploadingField(null=True)
     image = models.ImageField(upload_to=user_directory_path, default='posts/default.jpg')
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     publish = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(UserBase, on_delete=models.CASCADE, related_name='blog_posts')
-    content = models.TextField()
+    content = RichTextUploadingField()
+    tags = TaggableManager(blank=True)
     status = models.CharField(max_length=10, choices=options, default='draft')
     objects = models.Manager()  # default manager
     newmanager = NewManager()  # custom manager
@@ -54,19 +58,18 @@ class Post(models.Model):
         return self.title
 
 
-# class Comment(MPTTModel):
+class Comment(models.Model):
 
-#     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-#     name = models.CharField(max_length=50, blank=True, null=True)
-#     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
-#     email = models.EmailField(blank=True, null=True)
-#     content = models.TextField()
-#     publish = models.DateTimeField(auto_now_add=True)
-#     status = models.BooleanField(default=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    content = models.TextField()
+    publish = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=True)
 
-#     class MPTTMeta:
-#         order_insertion_by = ['publish']
+    class Meta:
+        ordering = ('publish',)
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return f'Comment by {self.name}'
 
